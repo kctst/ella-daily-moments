@@ -51,7 +51,7 @@
   <li><b>購買驗證</b>：本程式是付費 App。下載圖片前，本程式會把 Apple 為這份 App 副本簽發的購買憑證（AppTransaction）送到開發者的圖片服務，以核實它是從 App Store、TestFlight 或 Apple 審核取得。服務只核對 Apple 的簽名及本程式的識別碼，不會儲存或記錄這份憑證。憑證不包含你的姓名、電郵或付款資料。</li>
   <li><b>匿名裝置編碼</b>：服務會把憑證中 Apple 為每部裝置的這次安裝提供的裝置驗證值，以單向雜湊（SHA-256，取前 32 個字元）計算成匿名裝置編碼，並簽發一張 24 小時有效的通行證。通行證只存於 App 的記憶體，關閉 App 即消失。編碼不能還原為原值，開發者亦不會把它與你的姓名、Apple 帳號或任何其他資料連結。</li>
   <li><b>每日下載上限</b>：為防止圖片被大量下載，服務按日（世界協調時間）為每個編碼記錄預覽圖及原圖的下載次數；超過每日上限時，下載會暫停至翌日。記錄只有日期、編碼、類別（預覽圖或原圖）及次數，不包括 IP 位址、你下載了哪幾張圖、你的收藏或其他資料。</li>
-  <li><b>保存期</b>：這些每日計數只為執行下載上限及防止濫用而保存，不會作其他用途，我們會定期刪除舊記錄。</li>
+  <li><b>保存期</b>：這些每日計數只為執行下載上限及防止濫用而保存，不會作其他用途。每筆記錄保存 30 日，之後由服務每日自動刪除；伺服器不會長期保存任何與你裝置相關的資料。</li>
   <li><b>技術記錄及服務供應商</b>：開發者的服務只記錄核實成功或失敗的原因等技術事件，不記錄憑證、通行證或個人資料。Cloudflare 作為服務供應商，可能按其私隱政策處理一般網絡連線資料（例如 IP 位址），以傳送內容及保障安全；開發者不會利用這些資料識別你。</li>
 </ul>
 
@@ -77,7 +77,7 @@
 
 <h2>九、聯絡及政策變更</h2>
 <p>本程式由個人開發者維護。私隱或其他查詢，請電郵：<a href="mailto:kctst0081@gmail.com">kctst0081@gmail.com</a>。你寄出的電郵只用於回覆及跟進問題，不會用於廣告或出售。本政策如有更新，會直接修訂本頁並更新上方日期。</p>
-<p>2026 年 11 月 25 日更新：加入 App 內購買「快速領包」，以及購買驗證、匿名裝置編碼、每日下載上限及 App Store 私隱標示的說明。</p>
+<p>2026 年 11 月 25 日更新：加入 App 內購買「快速領包」，以及購買驗證、匿名裝置編碼、每日下載上限（記錄保存 30 日後自動刪除）及 App Store 私隱標示的說明。</p>
 
 <div class="lang" id="en">
 <h1>Ella Muse — Privacy Policy</h1>
@@ -111,7 +111,7 @@
   <li><b>Purchase verification</b>: this is a paid app. Before downloading pictures, the app sends the proof of purchase that Apple signs for this copy of the app (AppTransaction) to the developer's image service, to confirm it came from the App Store, TestFlight or App Review. The service checks only Apple's signature and the app's identifier; it does not store or log the proof. The proof contains no name, email or payment details.</li>
   <li><b>Anonymous device code</b>: from the device verification value in the proof (a value Apple provides for each device and installation), the service computes a one-way hash (SHA-256, first 32 characters) as an anonymous device code and issues a token valid for 24 hours. The token is kept only in the app's memory and disappears when the app is closed. The code cannot be turned back into the original value, and the developer never links it to your name, Apple Account or any other data.</li>
   <li><b>Daily download limit</b>: to stop pictures being downloaded in bulk, the service records, per day (UTC) and per code, the number of preview and full-size downloads; above the daily limit, downloads pause until the next day. A record holds only the date, the code, the type (preview or full size) and the count. It does not include IP addresses, which pictures you downloaded, your collection or any other data.</li>
-  <li><b>Retention</b>: these daily counts are kept only to enforce the download limit and prevent abuse, are never used for anything else, and old records are deleted regularly.</li>
+  <li><b>Retention</b>: these daily counts are kept only to enforce the download limit and prevent abuse, and are never used for anything else. Each record is kept for 30 days and is then deleted automatically by a daily clean-up; the server keeps no long-term data about your device.</li>
   <li><b>Technical logs and service providers</b>: the developer's service logs only technical events such as the reason a verification succeeded or failed, never the proof, the token or personal data. Cloudflare, as a service provider, may process ordinary connection data such as IP addresses under its own privacy policy to deliver content and keep the service secure; the developer does not use it to identify you.</li>
 </ul>
 
@@ -137,7 +137,7 @@
 
 <h2>9. Contact and changes</h2>
 <p>The app is maintained by an individual developer. For privacy or other questions, email <a href="mailto:kctst0081@gmail.com">kctst0081@gmail.com</a>. Emails are used only to reply and follow up, never for advertising or sale. If this policy changes, this page and the date above will be updated.</p>
-<p>Updated 25 November 2026: added the Quick Pack in-app purchase, and explained purchase verification, the anonymous device code, the daily download limit and the App Store privacy label.</p>
+<p>Updated 25 November 2026: added the Quick Pack in-app purchase, and explained purchase verification, the anonymous device code, the daily download limit (records deleted automatically after 30 days) and the App Store privacy label.</p>
 </div>
 </main>
 </body>
